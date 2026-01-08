@@ -7,7 +7,7 @@ void main() {
 // ============================
 // 1) MyApp: tema y Material 3
 // ============================
-class MyApp extends StatelessWidget {
+class MyApp extends StatelessWidget { 
   const MyApp({super.key}); // (Práctica) constructor explícito
 
   @override
@@ -183,16 +183,17 @@ class _MyHomePageState extends State<MyHomePage> {
       // ==========================
       // FLOATING ACTION BUTTON (Práctica)
       // ==========================
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: FloatingActionButton.extended(
         // 1) Sigue funcionando el contador
         onPressed: _incrementCounter,
 
-        // (Práctica) personalización estética
+        // personalización estética
         backgroundColor: Colors.pink,
         tooltip: 'Incrementar contador',
-        child: const Icon(Icons.add),
+        label:  const Text('Añadir') ,
+        icon: const Icon(Icons.add),
 
-        // Nota: si quieres cambiar tamaño, hay variantes:
+        // Nota: si se quiere cambiar tamaño, hay variantes:
         // FloatingActionButton.small / .large / .extended(...)
       ),
 
