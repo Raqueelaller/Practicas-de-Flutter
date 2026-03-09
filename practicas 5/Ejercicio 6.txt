@@ -1,0 +1,39 @@
+﻿¿Cómo se llama el widget responsable de la animación?
+En la versión actual, no existe un único widget responsable del posicionamiento animado.
+La parte visual se pinta con CustomPaint, mientras que la animación la controla el Ticker junto con SunflowerController.
+¿Qué parámetros tiene?
+El widget principal Sunflower define estos parámetros:
+* seeds
+
+* max
+
+* duration
+
+Además, el controlador SunflowerController recibe:
+   * max
+
+   * curve
+
+La curva por defecto es Curves.easeInOut.
+¿Cómo puedes acelerar o ralentizar la animación?
+La velocidad se modifica cambiando el valor de duration:
+      * una duración más corta = animación más rápida
+
+      * una duración más larga = animación más lenta
+
+En el código aparece así:
+this.duration = const Duration(milliseconds: 2000)
+Por tanto, si por ejemplo se cambia a 1000 ms, irá más rápido; si se cambia a 4000 ms, irá más lento.
+¿Cómo puedes modificar la curva?
+La curva se cambia en el controlador, en este parámetro:
+SunflowerController({required int max, Curve curve = Curves.easeInOut})
+Por ejemplo, se podría sustituir por:
+         * Curves.linear
+
+         * Curves.easeIn
+
+         * Curves.easeOut
+
+         * Curves.bounceOut
+
+Eso cambiaría la forma en la que progresa la animación de las semillas.
